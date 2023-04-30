@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CoolEvents_GraduationProject.Models
 {
@@ -13,6 +14,7 @@ namespace CoolEvents_GraduationProject.Models
 
         [Required(ErrorMessage = "Please add a decription of the event")]
         [StringLength(255)]
+        [AllowNull]
         public string Description { get; set; }
 
         [DataType(DataType.ImageUrl)]

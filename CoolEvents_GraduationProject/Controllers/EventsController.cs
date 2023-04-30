@@ -21,7 +21,7 @@ namespace CoolEvents_GraduationProject.Controllers
         {
             return _context.Events != null ?
                         View(await _context.Events.ToListAsync()) :
-                        Problem("Entity set 'AppDbContext.Events'  is null.");
+                        Problem("Entity set 'AppDbContext.Events' is null.");
         }
 
         // GET: Events/Details
@@ -51,7 +51,7 @@ namespace CoolEvents_GraduationProject.Controllers
         // POST: Events/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Date,Image")] Event @event)
+        public async Task<IActionResult> Create([Bind("Id,Image,Name,Description,Date")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace CoolEvents_GraduationProject.Controllers
         // POST: Events/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Description,Date,Image")] Event @event)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Image,Name,Description,Date")] Event @event)
         {
             if (id != @event.EventId)
             {

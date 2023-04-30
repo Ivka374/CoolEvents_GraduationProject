@@ -51,7 +51,7 @@ namespace CoolEvents_GraduationProject.Controllers
         // POST: Tickets/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Date,Image")] Event ticket)
+        public async Task<IActionResult> Create([Bind("Id,User.UserName,Event.EventName")] Event ticket)
         {
             if (ModelState.IsValid)
             {

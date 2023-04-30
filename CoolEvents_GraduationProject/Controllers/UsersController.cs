@@ -51,7 +51,7 @@ namespace CoolEvents_GraduationProject.Controllers
         // POST: Users/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Username,Password,FirstName,LastName")] User user)
+        public async Task<IActionResult> Create([Bind("Id,UserName,Password,FirstName,LastName")] User user)
         {
             if (ModelState.IsValid)
             {
